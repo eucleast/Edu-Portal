@@ -44,45 +44,45 @@ if(!isset($_SESSION['username'])) {
                 <a class="dropdown-item" href="#">Handover Documents</span></a>
             </li>
             <li class="dropdown-submenu">
-                <a tabindex="-1" href="#">Products <span class="caret"></span></a>
+                <a class="test" tabindex="-1" href="#">Products <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li class="dropdown-submenu">
-                    <a href="#">IPLC <span class="caret"></span></a>
-                    <ul class="dropdown-item">
-                      <li><a href="#">IPLC</a></li>
-                      <li><a href="#">IEPL</a></li>
-                      <li><a href="#">Backhaul</a></li>
-                      <li><a href="#">Transit</a></li>
-                      <li><a href="#">Interconnect</a></li>
-                      <li><a href="#">IRU</a></li>
+                    <a class="test" href="#">IPLC <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">IPLC</a></li>
+                      <li><a class="dropdown-item" href="#">IEPL</a></li>
+                      <li><a class="dropdown-item" href="#">Backhaul</a></li>
+                      <li><a class="dropdown-item" href="#">Transit</a></li>
+                      <li><a class="dropdown-item" href="#">Interconnect</a></li>
+                      <li><a class="dropdown-item" href="#">IRU</a></li>
                       <li class="dropdown-submenu">
                         <a href="#">Circuit List <span class="caret"></span></a>
-                        <ul class="dropdown-item">
-                          <li><a href="#">Vodafone</a></li>
-                          <li><a href="#">Google</a></li>
-                          <li><a href="#">Microsoft</a></li>
-                          <li><a href="#">GITN</a></li>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Vodafone</a></li>
+                          <li><a class="dropdown-item" href="#">Google</a></li>
+                          <li><a class="dropdown-item" href="#">Microsoft</a></li>
+                          <li><a class="dropdown-item" href="#">GITN</a></li>
                         </ul>
                       </li>
                     </ul>
                   </li>
                   <li class="dropdown-submenu">
-                    <a tabindex="-1" href="#">Metro-E <span class="caret"></span></a>
+                    <a class="test" tabindex="-1" href="#">Metro-E <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li class="dropdown-submenu">
                         <a href="#">NID <span class="caret"></span></a>
-                        <ul class="dropdown-item">
-                          <li><a href="#">HRF</a></li>
-                          <li><a href="#">Raisecom</a></li>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">HRF</a></li>
+                          <li><a class="dropdown-item" href="#">Raisecom</a></li>
                         </ul>
                       </li>
                       <li class="dropdown-submenu">
                         <a href="#">UPE <span class="caret"></span></a>
-                        <ul class="dropdown-item">
-                          <li><a href="#">Alcatel 7210</a></li>
-                          <li><a href="#">Alcatel 7520</a></li>
-                          <li><a href="#">Huawei</a></li>
-                          <li><a href="#">ZTE</a></li>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Alcatel 7210</a></li>
+                          <li><a class="dropdown-item" href="#">Alcatel 7520</a></li>
+                          <li><a class="dropdown-item" href="#">Huawei</a></li>
+                          <li><a class="dropdown-item" href="#">ZTE</a></li>
                         </ul>
                       </li>
                       <li><a class="dropdown-item" tabindex="-1" href="#">Express 1.0/2.0</a></li>
@@ -136,13 +136,13 @@ if(!isset($_SESSION['username'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-  $(document).ready(function(){
-    $('.dropdown-submenu a.dropdown-item').on("click", function(e){
-      $(this).next('ul').toggle();
-      e.stopPropagation();
-      e.preventDefault();
+    $(document).ready(function(){
+      $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
     });
-  });
-</script>
+    </script>
 </body>
 </html>
