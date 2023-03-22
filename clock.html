@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digital Clock</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center my-5">Digital Clock</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card bg-light">
+            <div class="card-body">
+              <h2 class="card-title text-center" id="clock"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+      // Function to display current time
+      function displayTime() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        var meridiem = "AM";
+        
+        // Convert to 12 hour format
+        if (hours > 12) {
+          hours = hours - 12;
+          meridiem = "PM";
+        }
+        
+        // Add leading zeros to minutes and seconds
+        minutes = checkTime(minutes);
+        seconds = checkTime(seconds);
+        
+        // Display time in card title
+        document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds + " " + meridiem;
+        
+        // Refresh every second
+        setTimeout(displayTime, 1000);
+      }
+      
+      // Function to add leading zeros to minutes and seconds
+      function checkTime(i) {
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
+      }
+      
+      // Call displayTime function on page load
+      displayTime();
+    </script>
+  </body>
+</html>
