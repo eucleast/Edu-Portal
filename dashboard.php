@@ -44,10 +44,10 @@ if(!isset($_SESSION['username'])) {
                 <a class="dropdown-item" href="#">Handover Documents</span></a>
             </li>
             <li class="dropdown-submenu">
-                <a class="test" tabindex="-1" href="#">Products <span class="caret"></span></a>
+                <a class="dropdown-item dropdown-toggle" href="#">Products</span></a>
                 <ul class="dropdown-menu">
                   <li class="dropdown-submenu">
-                    <a class="test" href="#">IPLC <span class="caret"></span></a>
+                    <a class="dropdown-item dropdown-toggle" href="#">IPLC</span></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">IPLC</a></li>
                       <li><a class="dropdown-item" href="#">IEPL</a></li>
@@ -56,7 +56,7 @@ if(!isset($_SESSION['username'])) {
                       <li><a class="dropdown-item" href="#">Interconnect</a></li>
                       <li><a class="dropdown-item" href="#">IRU</a></li>
                       <li class="dropdown-submenu">
-                        <a href="#">Circuit List <span class="caret"></span></a>
+                        <a class="dropdown-item dropdown-toggle" href="#">Circuit List</span></a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">Vodafone</a></li>
                           <li><a class="dropdown-item" href="#">Google</a></li>
@@ -67,17 +67,17 @@ if(!isset($_SESSION['username'])) {
                     </ul>
                   </li>
                   <li class="dropdown-submenu">
-                    <a class="test" tabindex="-1" href="#">Metro-E <span class="caret"></span></a>
+                    <a class="dropdown-item dropdown-toggle" href="#">Metro-E</span></a>
                     <ul class="dropdown-menu">
                       <li class="dropdown-submenu">
-                        <a href="#">NID <span class="caret"></span></a>
+                        <a class="dropdown-item dropdown-toggle" href="#">NID</span></a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">HRF</a></li>
                           <li><a class="dropdown-item" href="#">Raisecom</a></li>
                         </ul>
                       </li>
                       <li class="dropdown-submenu">
-                        <a href="#">UPE <span class="caret"></span></a>
+                        <a class="dropdown-item dropdown-toggle" href="#">UPE</span></a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">Alcatel 7210</a></li>
                           <li><a class="dropdown-item" href="#">Alcatel 7520</a></li>
@@ -94,10 +94,10 @@ if(!isset($_SESSION['username'])) {
                 </ul>
             </li>
             <li class="dropdown-submenu">
-                <a class="dropdown-item" href="#">Handy Apps <span class="caret"></span></a>
+                <a class="dropdown-item" href="#">Handy Apps</span></a>
             </li>
             <li class="dropdown-submenu">
-                <a class="dropdown-item" href="#">E-Learning <span class="caret"></span></a>
+                <a class="dropdown-item" href="#">E-Learning</span></a>
             </li>
           </ul>
         </div>
@@ -136,11 +136,20 @@ if(!isset($_SESSION['username'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-    $(document).ready(function(){
-      $('.dropdown-submenu a.test').on("click", function(e){
+    $(document).ready(function() {
+      // Close all submenus except the one that was clicked
+      $('.dropdown-submenu a.dropdown-toggle').on("click", function(e) {
         $(this).next('ul').toggle();
         e.stopPropagation();
         e.preventDefault();
+        $('.dropdown-submenu > ul').not($(this).next('ul')).hide();
+      });
+
+      // Hide all submenus when clicking outside of the dropdown menu
+      $(document).on('click', function(e) {
+        if (!$(e.target).closest('.dropdown-menu').length) {
+          $('.dropdown-submenu > ul').hide();
+        }
       });
     });
     </script>
